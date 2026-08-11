@@ -1,0 +1,27 @@
+{
+  "name": "chriswick-production-portfolio",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "npm run build"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^9.6.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.2",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.4",
+    "vite": "^8.1.5"
+  },
+  "engines": {
+    "node": ">=20.19.0",
+    "npm": ">=10"
+  }
+}
