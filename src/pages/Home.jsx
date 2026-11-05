@@ -22,7 +22,7 @@ export default function Home() {
         </aside>
       </section>
       <ServiceWall onSelect={(slug, title) => transitionTo(`/service/${slug}`, `OPENING ${title.toUpperCase()}`)} />
-      <section className="work-section">
+      <section className="work-section" id="work">
         <div className="section-heading split-heading"><div><span>SELECTED OPERATIONS</span><h2>Work with a measurable pulse.</h2></div><p>Real portfolio pieces from education, athletics, interviews, campaigns, and social content.</p></div>
         <PortfolioGrid />
       </section>
