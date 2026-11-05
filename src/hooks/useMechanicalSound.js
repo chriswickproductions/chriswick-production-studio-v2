@@ -1,4 +1,3 @@
-
 import { useCallback, useEffect, useRef } from "react";
 
 export function useMechanicalSound() {
@@ -13,7 +12,7 @@ export function useMechanicalSound() {
     const loadVoice = async () => {
       try {
         const response = await fetch(
-          "/assets/audio/creative-target-locked.mp3"
+          `${import.meta.env.BASE_URL}assets/audio/creative-target-locked.mp3`
         );
 
         if (!response.ok) {
@@ -24,7 +23,7 @@ export function useMechanicalSound() {
         const AudioContextClass =
           window.AudioContext || window.webkitAudioContext;
 
-        if (!AudioContextClass) return;
+        if (!active || !AudioContextClass) return;
 
         const ctx = new AudioContextClass();
         audioContextRef.current = ctx;
@@ -43,7 +42,10 @@ export function useMechanicalSound() {
 
     return () => {
       active = false;
-      audioContextRef.current?.close().catch(() => {});
+      const ctx = audioContextRef.current;
+      audioContextRef.current = null;
+      voiceBufferRef.current = null;
+      ctx?.close().catch(() => {});
     };
   }, []);
 
