@@ -10,12 +10,18 @@ export default function Landing() {
   const playMechanical = useMechanicalSound()
   const [transitioning, setTransitioning] = useState(false)
 
-  const enter = () => {
-    if (transitioning) return
-    playMechanical()
-    setTransitioning(true)
-    window.setTimeout(() => navigate('/home'), 920)
-  }
+  
+const enter = () => {
+  if (transitioning) return;
+
+  playMechanical();
+  setTransitioning(true);
+
+  window.setTimeout(() => {
+    navigate("/home");
+  }, 3200);
+};
+
 
   return (
     <main className="landing-screen">
